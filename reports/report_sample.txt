@@ -1,0 +1,28 @@
+===== Nginx Traffic Report =====
+Generated       : 2026-10-19 19:25:02
+Log file        : /var/log/nginx/access.log
+
+Total requests  : 202
+Malformed lines : 0
+
+--- Top 10 IP addresses ---
+     72 ::1
+     67 172.21.138.126
+     63 127.0.0.1
+
+--- Top 10 requested URLs ---
+     81 /
+     75 /index.html
+     13 /missing
+     11 /wp-login.php
+     11 /nope.html
+      7 /admin
+      4 /api/v1/users
+
+--- Response code classes ---
+2xx: 156
+4xx: 46
+5xx: 0
+
+--- Requests per hour ---
+19/Oct/2026:19:00  202
