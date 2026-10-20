@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+files=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.sh$' || true)
+[[ -z "$files" ]] && exit 0
+if ! command -v shellcheck >/dev/null 2>&1; then
+  echo "ERROR: shellcheck is not installed"; exit 1
+fi
+echo "Running shellcheck on staged .sh files..."
+if ! echo "$files" | xargs shellcheck; then
+  echo "COMMIT BLOCKED: fix the shellcheck errors above."
+  exit 1
+fi
+echo "shellcheck passed."
